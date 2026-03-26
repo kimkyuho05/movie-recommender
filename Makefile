@@ -1,21 +1,14 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++17 -Iinclude
+CXXFLAGS = -std=c++17 -Wall -Iinclude
 TARGET = movie_app
 
+SRCS = src/main.cpp src/Movie.cpp src/User.cpp src/Rating.cpp
 
-SRCS = src/Movie.cpp src/User.cpp src/Rating.cpp src/main.cpp
-OBJS = $(SRCS:.cpp=.o)
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
 
-all: $(TARGET)
-
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
-	rm -f src/*.o $(TARGET)
-
-run: all
-	./$(TARGET)
+	rm -f $(TARGET)

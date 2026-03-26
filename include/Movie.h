@@ -3,20 +3,25 @@
 
 class Movie {
 private:
-    int id;
+    int         id;
     std::string title;
     std::string genre;
-    std::string director;
-    int year;
-    double totalRating; 
-    int ratingCount;    
+    int         releaseYear;
+    double      totalRating; 
+    int         ratingCount; 
 
 public:
     Movie(); 
-    Movie(int id, std::string title, std::string genre, std::string director, int year);
-    void addRating(double score);     
-    double getAverageRating() const; 
-    void display() const;            
-    int getId() const { return id; }
-    std::string getTitle() const { return title; }
+    Movie(int id, const std::string& title,
+          const std::string& genre, int year);
+
+    int         getId()              const;
+    std::string getTitle()           const;
+    std::string getGenre()           const;
+    int         getReleaseYear()     const; 
+    double      getAverageRating()   const; 
+    int         getRatingCount()     const; 
+
+    void addRating(double r); 
+    void display()              const;
 };
