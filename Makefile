@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++17 -Iinclude
 TARGET = movie_app
 
-# 모든 소스 파일 리스트
+
 SRCS = src/Movie.cpp src/User.cpp src/Rating.cpp src/main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
