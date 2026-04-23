@@ -24,4 +24,5 @@ public:
 
     void addRating(double r); 
     void display()              const;
+    bool operator<(const Movie& other) const;
 };

@@ -35,3 +35,6 @@ void Movie::display() const {
               << " (" << ratingCount << "건)"
               << std::endl;
 }
+bool Movie::operator<(const Movie& other) const {
+    return this->getAverageRating() > other.getAverageRating();
+}
