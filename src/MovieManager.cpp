@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm>
 
-void MovieManager::addMovie(Movie m) {
+void MovieManager::addMovie(const Movie& m) {
     movies.push_back(m);
 }
 

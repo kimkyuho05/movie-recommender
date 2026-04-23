@@ -8,7 +8,7 @@ private:
     std::vector<Movie> movies; 
 
 public:
-    void addMovie(Movie m);
+    void addMovie(const Movie& m);
     void printAll() const;
     Movie* findByTitle(std::string title);
     void sortByRating();
